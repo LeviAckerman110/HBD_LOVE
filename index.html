@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our Little Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Inter:wght@400;500&family=Cairo:wght@400;600;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="lang" role="group" aria-label="Language">
+  <button data-l="en" class="on">EN</button><span>|</span><button data-l="ar">AR</button>
+</div>
+<div id="hearts" aria-hidden="true"></div>
+<div id="chapterInd" class="chapterInd" aria-hidden="true"></div>
+
+<!-- الشاشة الأولى -->
+<section id="landing">
+  <div class="glass card">
+    <h1 class="script" data-i18n="q1"></h1>
+    <p data-i18n="q2"></p>
+    <div class="btns">
+      <button id="yes" class="bubble yesB locked" aria-disabled="true" data-i18n="yes"></button>
+      <button id="no" class="bubble noB" data-i18n="no"></button>
+    </div>
+    <p id="noMsg" class="noMsg" aria-live="polite"></p>
+  </div>
+</section>
+
+<div id="burst" aria-hidden="true">❤</div>
+<div id="intro" aria-live="polite"></div>
+
+<main id="main" hidden>
+  <div id="sky" aria-hidden="true"><div id="stars"></div><div class="moon" aria-hidden="true"><b id="moonM"></b></div><i class="shoot s1"></i><i class="shoot s2"></i><div class="cloud c1"></div><div class="cloud c2"></div><div class="glow"></div></div>
+  <button id="music" class="music" hidden aria-label="Toggle music"><span></span><span></span><span></span></button>
+  <button id="secretStar" class="secretStar" aria-label="star">✦</button>
+  <div id="ps" class="ps glass" role="status"></div>
+
+  <section class="hero">
+    <h2 class="script tw" data-i18n="h1"></h2>
+    <p class="serif tw" data-i18n="h2"></p>
+    <span class="scroll" data-i18n="scroll"></span>
+  </section>
+
+  <section class="since"><h2 class="title serif tw" data-i18n="sinceT"></h2><div id="sinceCount" class="count rv"></div></section>
+
+  <section class="love"><p id="loveMsg" class="serif big tw" data-i18n="love"></p></section>
+
+  <section data-chapter="1"><h2 class="title serif tw" data-i18n="storyT"></h2><div id="timeline" class="timeline"></div></section>
+
+  <section data-chapter="3"><h2 class="title serif tw" data-i18n="memT"></h2><div id="gallery" class="gallery"></div></section>
+
+  <section data-chapter="2"><h2 class="title serif tw" data-i18n="reasonsT"></h2><p class="hint rv" data-i18n="reasonsHint"></p><div id="reasons" class="reasons"></div></section>
+
+  <section><h2 class="title serif tw" data-i18n="funnyT"></h2><div id="funny" class="reasons"></div></section>
+
+  <section class="hb">
+    <button id="heart" class="heartBtn" aria-label="heartbeat">❤️</button>
+    <p id="hbNum" class="hbNum"></p>
+    <p id="hbMsg" class="hbMsg" aria-live="polite"></p>
+  </section>
+
+  <section class="letters" data-chapter="4">
+    <h2 class="title serif tw" data-i18n="lettersT"></h2>
+    <p class="hint rv" data-i18n="lettersHint"></p>
+    <div id="letters" class="lettersGrid"></div>
+    <p id="lettersCount" class="lcount" aria-live="polite"></p>
+  </section>
+
+  <section class="meter">
+    <h2 class="title serif tw" data-i18n="meterT"></h2>
+    <div id="meterBox" class="glass meterBox">
+      <div id="gWrap" class="gWrap">
+        <svg id="gauge" viewBox="0 0 240 150" role="img" aria-label="Love meter">
+          <defs><linearGradient id="gGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" style="stop-color:var(--pink)"/><stop offset="1" style="stop-color:var(--red)"/></linearGradient></defs>
+          <path class="gTrack" d="M30 120A90 90 0 0 1 210 120"/>
+          <path id="gProg" class="gProg" d="M30 120A90 90 0 0 1 210 120"/>
+          <path id="gCrack" class="gCrack" d="M112 24l7 14-9 9 8 12M186 62l-10 6 6 10"/>
+          <g id="needle"><line x1="120" y1="120" x2="120" y2="62" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M120 42c-6-8-16-2-11 6 3 5 8 8 11 11 3-3 8-6 11-11 5-8-5-14-11-6z" fill="#e0526f" stroke="#fff" stroke-width="1"/></g>
+          <circle cx="120" cy="120" r="9" fill="#fff"/>
+          <text id="gTop" class="gTop" x="120" y="16" text-anchor="middle">50</text>
+          <text class="gLbl" x="30" y="144" text-anchor="middle">0</text><text class="gLbl" x="210" y="144" text-anchor="middle">100</text>
+        </svg>
+      </div>
+      <div id="gMsg" class="gMsg" aria-live="assertive"></div>
+      <div id="gResult" class="gResult" hidden>
+        <p id="gX" class="script mx"></p><p id="gInf" class="inf"></p><p id="gNote"></p><p id="gCnt" class="cnt"></p>
+      </div>
+      <button id="measure" class="yes" data-i18n="measure"></button>
+      <button id="again" class="yes" data-i18n="again" hidden></button>
+    </div>
+  </section>
+
+  <section class="bday">
+    <h2 class="title serif gold tw" data-i18n="bdayT"></h2>
+    <p class="tw" data-i18n="bdayMsg"></p>
+    <div id="count" class="count rv"></div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+  </section>
+
+  <section>
+    <h2 class="title serif tw" data-i18n="dateQ"></h2>
+    <p id="calHint" class="hint rv" data-i18n="calHint"></p>
+    <div id="calBox" class="glass cal rv"><div id="calHead" class="calHead"></div><div id="calGrid" class="calGrid"></div></div>
+    <div id="timeBox" class="glass cal timeBox" hidden>
+      <p id="pickedDay" class="pickedDay"></p>
+      <h3 class="serif" data-i18n="timeQ"></h3>
+      <div id="hrs" class="chips hrs"></div><div id="mins" class="chips"></div><div id="ampm" class="chips"></div>
+      <button id="timeOk" class="yes" data-i18n="timeOk" disabled></button>
+      <button id="backDay" class="linkBtn" data-i18n="change"></button>
+    </div>
+    <div id="dateResult" class="dateResult" aria-live="polite"></div>
+  </section>
+
+  <section class="choose">
+    <h2 class="title serif tw" data-i18n="chooseT"></h2>
+    <div id="choices" class="choicesGrid"></div>
+    <p id="chooseMsg" class="chooseMsg rv" aria-live="polite"></p>
+  </section>
+
+  <section>
+    <button id="surprise" class="yes rv" data-i18n="surBtn"></button>
+  </section>
+
+  <section class="final" data-chapter="5">
+    <div id="beforeLeave" class="beforeLeave rv">
+      <p class="serif" data-i18n="beforeLeave"></p>
+      <h3 class="serif" data-i18n="chooseAgainQ"></h3>
+      <div class="finalBtns"><button id="fYes" class="yes" data-i18n="yes"></button><button id="fAlways" class="yes" data-i18n="always"></button></div>
+      <p id="nextChapterMsg" class="nextChapterMsg" aria-live="polite"></p>
+    </div>
+    <p class="script tw" data-i18n="fin1"></p>
+    <h2 class="serif big tw" data-i18n="fin2"></h2>
+    <p class="rv" data-i18n="made"></p>
+    <h3 class="sig script rv" id="sig"></h3>
+    <a id="wa" class="yes rv" target="_blank" rel="noopener"></a>
+  </section>
+</main>
+
+<div id="lightbox" hidden role="dialog" aria-modal="true">
+  <button id="lbClose" class="lbClose" data-i18n-aria="close">✕</button>
+  <img id="lbImg" alt=""><h3 id="lbT" class="serif"></h3><p id="lbD"></p>
+</div>
+<div id="surBox" class="surOverlay" hidden role="dialog" aria-modal="true"><div class="glass surBox"><img id="surImg" alt="" hidden><p id="surMsg" class="serif"></p><button id="surClose" class="yes" data-i18n="close"></button></div></div>
+<audio id="audio" loop preload="metadata"></audio>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
